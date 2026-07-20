@@ -23,7 +23,7 @@ const PRODUTOS = [
     "badge": "Lançamento",
     "badgeOutline": true,
     "simbolo": "nenhum",
-    "imagem": "produtos/dunk",
+    "imagem": "dunk.pjeg",
   },
   {
     "id": "bones-alpha-e-omega-iuix",
