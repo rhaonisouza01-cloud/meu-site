@@ -24,6 +24,7 @@ const PRODUTOS = [
     "badgeOutline": true,
     "simbolo": "nenhum",
     "imagem": "produtos/dunk.jpeg",
+    "tamanhos": ["34 ao 43"]
   },
   {
     "id": "bones-alpha-e-omega-iuix",
@@ -70,6 +71,85 @@ const PRODUTOS = [
     "badgeOutline": false,
     "simbolo": "nenhum",
     "imagem": "produtos/camiseta-branca.jpeg",
+    "tamanhos": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
+  },
+  {
+    "id": "oversized-se-aprofundar-nas-agua-de-cristo-cv6i",
+    "categoria": "camisetas",
+    "nome": "OVERSIZED \"Se aprofundar nas água de Cristo\"",
+    "versiculo": "EZEQUIEL 47",
+    "descricao": "",
+    "preco": "R$ 59,90",
+    "parcelamento": "",
+    "badge": "NOVO",
+    "badgeOutline": false,
+    "simbolo": "nenhum",
+    "imagem": "produtos/produto 8.jpeg",
+    "tamanhos": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
+  },
+  {
+    "id": "sueter-jesus-ama-voce-glk3",
+    "categoria": "acessorios",
+    "nome": "Suéter \"Jesus ama você\"",
+    "versiculo": "se esquente e espalhe o evangelho com estilo",
+    "descricao": "",
+    "preco": "R$ 139,90",
+    "parcelamento": "",
+    "badge": "LANÇAMENTO",
+    "badgeOutline": false,
+    "simbolo": "nenhum",
+    "imagem": "produtos/produto 9.jpeg",
+    "tipo": "sueter",
+    "tamanhos": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
+  },
+  {
+    "id": "sueter-eu-ja-fui-assim-mas-nao-estava-pronto-para-ser-encontrado-mrz4",
+    "categoria": "acessorios",
+    "nome": "Suéter \"eu já fui assim, mas não estava pronto para ser encontrado\"",
+    "versiculo": "Jesus me achou",
+    "descricao": "",
+    "preco": "R$ 89,90",
+    "parcelamento": "",
+    "badge": "NOVIDADE",
+    "badgeOutline": false,
+    "simbolo": "nenhum",
+    "imagem": "produtos/produto 7.jpeg",
+    "tipo": "sueter",
+    "tamanhos": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
+  },
+  {
+    "id": "agasalho-jesus-e-meu-melhor-amigo-qnsi",
+    "categoria": "acessorios",
+    "nome": "AGASALHO \"Jesus é meu melhor amigo\"",
+    "versiculo": "Meu melhor amigo é Jesus...",
+    "descricao": "",
+    "preco": "R$ 139.90",
+    "parcelamento": "ou 2x sem juros",
+    "badge": "",
+    "badgeOutline": false,
+    "simbolo": "nenhum",
+    "imagem": "produtos/produto 6.jpeg",
+    "tipo": "blusa",
     "tamanhos": [
       "P",
       "M",
