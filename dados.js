@@ -23,7 +23,7 @@ const PRODUTOS = [
     "badge": "Lançamento",
     "badgeOutline": true,
     "simbolo": "nenhum",
-    "imagem": "dunk.pjeg",
+    "imagem": "produtos/dunk.jpeg",
   },
   {
     "id": "bones-alpha-e-omega-iuix",
@@ -36,8 +36,8 @@ const PRODUTOS = [
     "badge": "NOVO",
     "badgeOutline": false,
     "simbolo": "nenhum",
-    "imagem": "produtos/bonés",
-    "tipo": "bone"
+    "imagem": "produtos/bonés.jpeg",
+    "tipo": "Boné"
   },
   {
     "id": "oversized-jesus-christ-ls04",
@@ -50,7 +50,7 @@ const PRODUTOS = [
     "badge": "NOVIDADE",
     "badgeOutline": false,
     "simbolo": "nenhum",
-    "imagem": "produtos/camiseta-preta",
+    "imagem": "produtos/camiseta-preta.jpeg",
     "tamanhos": [
       "P",
       "M",
@@ -69,7 +69,7 @@ const PRODUTOS = [
     "badge": "novo",
     "badgeOutline": false,
     "simbolo": "nenhum",
-    "imagem": "produtos/camiseta-branca",
+    "imagem": "produtos/camiseta-branca.jpeg",
     "tamanhos": [
       "P",
       "M",
