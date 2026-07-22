@@ -24,7 +24,18 @@ const PRODUTOS = [
     "badgeOutline": true,
     "simbolo": "nenhum",
     "imagem": "produtos/dunk.jpeg",
-    "tamanhos": ["34 ao 43"]
+    "tamanhos": [
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43"
+    ]
   },
   {
     "id": "bones-alpha-e-omega-iuix",

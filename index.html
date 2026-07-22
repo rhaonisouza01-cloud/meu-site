@@ -273,7 +273,7 @@
   .card-verse{ font-family:var(--serif); font-style:italic; font-size:13px; color:var(--gold-light); opacity:.85; }
   .card-body h3{ font-size:21px; color:var(--cream); }
   .card-body .desc{ font-size:13px; color:#a9a291; line-height:1.5; }
-  .card-foot{ display:flex; align-items:center; justify-content:space-between; margin-top:auto; padding-top:14px; border-top:1px solid var(--line); }
+  .card-foot{display:flex;flex-direction:column;gap:15px;margin-top:20px;}
   .price{ font-family:var(--serif); font-size:20px; color:var(--cream); }
   .price small{ display:block; font-family:var(--sans); font-size:10px; color:#a9a291; letter-spacing:.06em; }
   .wa-btn{
@@ -424,21 +424,297 @@
     border:2px solid #111;
 }
 .add-cart-btn{
+
     width:100%;
-    padding:12px;
-    margin-bottom:10px;
+
+    height:48px;
+
     border:none;
-    border-radius:10px;
+
+    border-radius:12px;
+
     background:#d4af37;
+
     color:#111;
-    font-weight:bold;
+
+    font-size:16px;
+
+    font-weight:700;
+
     cursor:pointer;
+
     transition:.3s;
+
 }
 
 .add-cart-btn:hover{
-    transform:translateY(-2px);
+
+    transform:translateY(-3px);
+
     background:#e6bf57;
+
+}
+.select-tamanho{
+
+    width:100%;
+
+    margin-top:8px;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    border:1px solid #333;
+
+    background:#181818;
+
+    color:white;
+
+    outline:none;
+
+}
+.cart-panel{
+
+    position:fixed;
+
+    top:0;
+
+    right:-420px;
+
+    width:400px;
+
+    max-width:100%;
+
+    height:100vh;
+
+    background:#111;
+
+    color:white;
+
+    transition:.35s;
+
+    z-index:9999;
+
+    display:flex;
+
+    flex-direction:column;
+
+    box-shadow:-5px 0 20px rgba(0,0,0,.5);
+
+}
+
+.cart-panel.open{
+
+    right:0;
+
+}
+
+.cart-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px;
+
+    border-bottom:1px solid #333;
+
+}
+
+.cart-header button{
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+}
+
+#cartItems{
+
+    flex:1;
+
+    overflow:auto;
+
+    padding:20px;
+
+}
+
+.cart-footer{
+
+    padding:20px;
+
+    border-top:1px solid #333;
+
+}
+
+.checkout-btn{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#d4af37;
+
+    color:#111;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+.cart-thumb{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    border-radius:12px;
+    border:1px solid rgba(212,175,55,.25);
+    flex-shrink:0;
+}
+.cart-item{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    padding:18px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+.cart-info{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.cart-info h4{
+    margin:0;
+    font-size:20px;
+    color:#fff;
+}
+
+.cart-info small{
+    color:#bbb;
+    font-size:15px;
+}
+.qtd{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:10px;
+}
+
+.qtd button{
+    width:34px;
+    height:34px;
+    border:none;
+    border-radius:50%;
+    background:#d4af37;
+    color:#111;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.qtd button:hover{
+    transform:scale(1.08);
+    background:#e6bf57;
+}
+
+.qtd span{
+    min-width:24px;
+    text-align:center;
+    font-size:18px;
+    font-weight:700;
+    color:#fff;
+}
+.remove-item{
+    margin-left:auto;
+    align-self:flex-start;
+
+    background:none;
+    border:none;
+
+    color:#ff5d5d;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.remove-item:hover{
+
+    transform:scale(1.15);
+
+    color:#ff2d2d;
+
+}
+.cart-total{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:18px;
+    padding:16px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(212,175,55,.15);
+}
+
+.cart-total span{
+
+    color:#bbb;
+
+    font-size:15px;
+
+}
+
+.cart-total strong{
+
+    color:#fff;
+
+    font-size:26px;
+
+}
+@keyframes cartBounce{
+    0%{transform:scale(1);}
+    30%{transform:scale(1.25);}
+    60%{transform:scale(.9);}
+    100%{transform:scale(1);}
+}
+
+.cart-bounce{
+    animation:cartBounce .45s ease;
+}
+
+@keyframes pop{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.4);}
+    100%{transform:scale(1);}
+}
+
+.count-pop{
+    animation:pop .35s ease;
+}
+
+.add-cart-btn.success{
+    background:#28a745;
+    color:#fff;
 }
 </style>
 </head>
@@ -463,7 +739,6 @@
     </button>
   </nav>
 </header>
-
 <div class="mobile-menu" id="mobileMenu">
   <a href="#inicio">Início</a>
   <a href="#versiculo-semana">Versículo da Semana</a>
@@ -762,19 +1037,30 @@
          <div class="desc">${p.descricao || ''}</div>
 
           ${p.tamanhos ? `
-         <div class="tamanhos">
-         <strong>Tamanhos:</strong> ${p.tamanhos.join(" • ")}
-     </div>
+<div class="tamanhos">
+
+    <label>Tamanho</label>
+
+    <select id="tam-${p.id}" class="select-tamanho">
+
+        <option value="">Selecione</option>
+
+        ${p.tamanhos.map(t => `
+            <option value="${t}">
+                ${t}
+            </option>
+        `).join("")}
+
+    </select>
+
+</div>
 ` : ""}
 <div class="card-foot">
             <div class="price">${p.preco}<small>${p.parcelamento || ''}</small></div>
-            <button class="add-cart-btn" onclick="adicionarAoCarrinho('${p.id}')">
-                Adicionar ao Carrinho
+            <button class="add-cart-btn"onclick="adicionarAoCarrinho('${p.id}', event)">
+                 Adicionar ao Carrinho
 </button>
-            <a href="#" class="wa-btn ${getBtnClass(p.categoria)}" data-produto="${p.nome}">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.06-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.09-.46-4.35-1.26l-.31-.19-3.09.81.82-3-.2-.32A7.94 7.94 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.4-5.6c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.02-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.65.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.57.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28z"/></svg>
-              Comprar
-            </a>
+
           </div>
         </div>
       </div>`;
@@ -859,6 +1145,41 @@
     }
   });
 </script>
+<div class="cart-panel" id="cartPanel">
+
+    <div class="cart-header">
+
+        <h2>🛒 Meu Carrinho</h2>
+
+        <button id="fecharCarrinho">✕</button>
+
+    </div>
+
+    <div id="cartItems">
+
+        <p>Seu carrinho está vazio.</p>
+
+    </div>
+
+    <div <div class="cart-footer">
+
+    <div class="cart-total">
+
+        <span>Subtotal</span>
+
+        <strong id="cartTotal">R$ 0,00</strong>
+
+    </div>
+
+    <button class="checkout-btn" id="checkoutBtn">
+
+        Finalizar Pedido
+
+    </button>
+
+</div>
+
+<script src="carrinho.js"></script>
 
 </body>
 </html>
