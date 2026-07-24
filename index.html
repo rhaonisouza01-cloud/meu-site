@@ -230,9 +230,8 @@
   .chip.active, .chip:hover{ border-color:var(--gold); color:var(--gold-light); }
 
   .grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:30px; }
-  .card{
-    background:var(--charcoal); border:1px solid var(--line); position:relative; overflow:hidden;
-    display:flex; flex-direction:column; transition:transform .4s ease, border-color .4s ease;
+  .card{min-width:180px; max-width:180px;flex:none;border-radius:18px;
+  overflow:hidden;background:#171717;transition:.3s;
   }
   .card:hover{ transform:translateY(-6px); border-color:var(--gold-dim); }
   .card-media{
@@ -245,11 +244,14 @@
     overflow:hidden;
   }
   .produto-img{
+
     width:100%;
+
     height:100%;
+
     object-fit:cover;
-    display:block;
-  }
+
+}
   .tamanhos{
     margin:10px 0;
     font-size:14px;
@@ -263,7 +265,8 @@
     margin: 60px auto;
     object-fit: contain;
 }
-  .card-media svg{ width:52%; opacity:.92; }
+  .card-media{height:220px;overflow:hidden;
+}
   .badge{
     position:absolute; top:14px; left:14px; background:var(--gold); color:var(--black);
     font-size:10px; text-transform:uppercase; letter-spacing:.1em; padding:6px 12px; font-weight:600;
@@ -271,10 +274,10 @@
   .badge.outline{ background:transparent; border:1px solid var(--gold-light); color:var(--gold-light); }
   .card-body{ padding:22px 22px 24px; display:flex; flex-direction:column; gap:10px; flex:1; }
   .card-verse{ font-family:var(--serif); font-style:italic; font-size:13px; color:var(--gold-light); opacity:.85; }
-  .card-body h3{ font-size:21px; color:var(--cream); }
+  .card-body h3{font-size:16px;line-height:1.3;margin-bottom:6px;}
   .card-body .desc{ font-size:13px; color:#a9a291; line-height:1.5; }
   .card-foot{display:flex;flex-direction:column;gap:15px;margin-top:20px;}
-  .price{ font-family:var(--serif); font-size:20px; color:var(--cream); }
+  .price{font-size:20px;font-weight:bold;}
   .price small{ display:block; font-family:var(--sans); font-size:10px; color:#a9a291; letter-spacing:.06em; }
   .wa-btn{
     display:flex; align-items:center; gap:8px; padding:10px 16px; background:var(--black);
@@ -425,25 +428,9 @@
 }
 .add-cart-btn{
 
-    width:100%;
+    height:42px;
 
-    height:48px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#d4af37;
-
-    color:#111;
-
-    font-size:16px;
-
-    font-weight:700;
-
-    cursor:pointer;
-
-    transition:.3s;
+    font-size:14px;
 
 }
 
@@ -716,6 +703,123 @@
     background:#28a745;
     color:#fff;
 }
+.products-slider{
+    display:flex;
+    gap:18px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-behavior:smooth;
+    margin-top: 45px;
+    padding:10px 5px 20px;
+}
+
+.products-slider::-webkit-scrollbar{
+    height:6px;
+}
+
+.products-slider::-webkit-scrollbar-thumb{
+    background:#d4af37;
+    border-radius:20px;
+}
+.section-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.ver-mais{
+
+    color:#d4af37;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.ver-mais:hover{
+
+    opacity:.7;
+
+}
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:20px;
+}
+
+.ver-mais{
+    color:#d4af37;
+    text-decoration:none;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+.ver-mais:hover{
+    opacity:.7;
+}
+.slider-wrapper{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.slider-btn{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#d4af37;
+
+    color:#111;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    z-index:20;
+
+}
+
+.slider-btn.left{
+
+    left:-18px;
+
+}
+
+.slider-btn.right{
+
+    right:-18px;
+
+}
 </style>
 </head>
 <body>
@@ -826,20 +930,40 @@
   <section id="camisetas">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">COLEÇÃO PRINCIPAL</div>
-        <h2>Camisetas Oversized Cristãs</h2>
-        <p>Caimento amplo, tecido 100% algodão penteado e estampas exclusivas que unem streetwear e fé de forma natural.</p>
-      </div>
 
-      <div class="filter-row reveal">
-        <div class="chip active">Todas</div>
-        <div class="chip">Masculinas</div>
-        <div class="chip">Femininas</div>
-        <div class="chip">Unissex</div>
-        <div class="chip">Lançamentos</div>
-      </div>
+    <div class="section-title">
 
-      <div class="grid" id="teesGrid">
+        <div>
+            <div class="eyebrow">COLEÇÃO PRINCIPAL</div>
+            <h2>Camisetas Oversized Cristãs</h2>
+            <p>Caimento amplo, tecido 100% algodão penteado e estampas exclusivas que unem streetwear e fé de forma natural.</p>
+        </div>
+
+        <a href="#" class="ver-mais"
+onclick="mostrarTodos('camisetas');return false;">
+Ver mais →
+</a>
+    </div>
+
+</div>
+
+
+      <div class="slider-wrapper">
+
+    <button class="slider-btn left"
+        onclick="scrollProdutos('teesGrid', -1)">
+        &#10094;
+    </button>
+
+    <div class="products-slider" id="teesGrid"></div>
+
+    <button class="slider-btn right"
+        onclick="scrollProdutos('teesGrid', 1)">
+        &#10095;
+    </button>
+
+</div>
+
         <!-- Produtos renderizados via JS a partir de dados.js -->
       </div>
     </div>
@@ -851,12 +975,38 @@
   <section id="calcados">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">ANDE NA JORNADA CERTA</div>
-        <h2>Calçados MonaLu</h2>
-        <p>Conforto e sofisticação para cada passo da caminhada. Modelos versáteis, do casual ao streetwear premium.</p>
-      </div>
 
-      <div class="grid" id="calcadosGrid">
+    <div class="section-title">
+
+        <div>
+            <div class="eyebrow">NOVA COLEÇÃO</div>
+            <h2>Calçados</h2>
+            <p>Tênis e calçados selecionados para unir estilo, conforto e personalidade.</p>
+        </div>
+
+        <a href="#" class="ver-mais"
+onclick="mostrarTodos('calcados');return false;">
+Ver mais →
+</a>
+
+    </div>
+
+</div>
+      <div class="slider-wrapper">
+
+    <button class="slider-btn left"
+        onclick="scrollProdutos('calcadosGrid',-1)">
+        &#10094;
+    </button>
+
+    <div class="products-slider" id="calcadosGrid"></div>
+
+    <button class="slider-btn right"
+        onclick="scrollProdutos('calcadosGrid',1)">
+        &#10095;
+    </button>
+
+</div>
         <!-- Produtos renderizados via JS a partir de dados.js -->
       </div>
     </div>
@@ -868,12 +1018,35 @@
   <section id="acessorios">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">MAIS DA COLEÇÃO</div>
-        <h2>Bonés, Blusas & Suéteres</h2>
-        <p>Complete o look com peças estampadas nos temas cristãos — do boné casual ao suéter para os dias mais frios, sempre com a fé em evidência.</p>
-      </div>
 
-      <div class="grid" id="acessoriosGrid">
+    <div class="section-title">
+
+        <div>
+            <div class="eyebrow">COMPLEMENTE SEU LOOK</div>
+            <h2>Acessórios</h2>
+            <p>Bonés, bolsas e acessórios para completar seu estilo com exclusividade.</p>
+        </div>
+
+        <a href="#" class="ver-mais"
+onclick="mostrarTodos('acessorios');return false;">
+Ver mais →
+</a>
+    </div>
+<div class="slider-wrapper">
+
+    <button class="slider-btn left"
+        onclick="scrollProdutos('acessoriosGrid',-1)">
+        &#10094;
+    </button>
+
+    <div class="products-slider" id="acessoriosGrid"></div>
+
+    <button class="slider-btn right"
+        onclick="scrollProdutos('acessoriosGrid',1)">
+        &#10095;
+    </button>
+
+</div>
         <!-- Produtos renderizados via JS a partir de dados.js -->
       </div>
     </div>
@@ -1065,21 +1238,81 @@
         </div>
       </div>`;
   }
+ 
+  const produtosExibidos = {
+    camisetas: 2,
+    calcados: 1,
+    acessorios: 2
+};
 
-  function renderProdutos(){
-    if (typeof PRODUTOS === 'undefined') return;
+function renderProdutos(){
+
+    if(typeof PRODUTOS === "undefined") return;
+
     const grids = {
-      camisetas: document.getElementById('teesGrid'),
-      calcados: document.getElementById('calcadosGrid'),
-      acessorios: document.getElementById('acessoriosGrid')
+        camisetas: document.getElementById("teesGrid"),
+        calcados: document.getElementById("calcadosGrid"),
+        acessorios: document.getElementById("acessoriosGrid")
     };
-    Object.keys(grids).forEach(cat => { if (grids[cat]) grids[cat].innerHTML = ''; });
-    PRODUTOS.forEach(p => {
-      const grid = grids[p.categoria];
-      if (grid) grid.insertAdjacentHTML('beforeend', renderCard(p));
+
+    Object.values(grids).forEach(grid=>{
+        if(grid) grid.innerHTML="";
     });
-  }
-  renderProdutos();
+
+    Object.keys(grids).forEach(categoria=>{
+
+        const grid = grids[categoria];
+
+        if(!grid) return;
+
+        const produtos = PRODUTOS
+            .filter(p=>p.categoria===categoria)
+            .slice(0,produtosExibidos[categoria]);
+
+        produtos.forEach(produto=>{
+
+            grid.insertAdjacentHTML(
+                "beforeend",
+                renderCard(produto)
+            );
+
+        });
+
+    });
+
+}
+  function mostrarTodos(categoria){
+
+    produtosExibidos[categoria] = 9999;
+
+    renderProdutos();
+
+    const botao = document.querySelector(
+        `[onclick="mostrarTodos('${categoria}');return false;"]`
+    );
+
+    if(botao){
+        botao.style.display = "none";
+    }
+
+}
+
+function scrollProdutos(id,direcao){
+
+    const slider = document.getElementById(id);
+
+    if(!slider) return;
+
+    slider.scrollBy({
+
+        left:300*direcao,
+
+        behavior:"smooth"
+
+    });
+
+}
+renderProdutos();
 </script>
 
 <script>
